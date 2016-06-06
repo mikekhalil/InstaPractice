@@ -1,0 +1,34 @@
+
+<link href="styles/profile.css" rel="stylesheet" />
+<h1 style="text-align: center;"> {{igItem.data.username}} </h1>
+<div class="centeredBlock">
+	<p> {{igItem.data.bio}} <p>
+	<img  ng-src="{{igItem.data.profile_picture}}" class="img-circle centeredBlock">
+	<div class="col-sm-4">
+		<h4>Pictures</h4> 
+		<p>{{igItem.data.counts.media}}</p>
+	</div>
+	<div class="col-sm-4">
+		<h4> Follows </h4> 
+		<p> {{igItem.data.counts.follows}} </p>
+	</div>
+	<div class="col-sm-4">
+		<h4> Followers </h4> 
+		<p>  {{igItem.data.counts.followed_by}} </p>
+	</div>
+</div>
+
+<div class ="recentMedia">
+
+</div>
+
+<div ng-repeat="picture in recentMedia.data" class="centeredBlock">
+	<div class="col-sm-4"> 
+		</br>
+		<img ng-src="{{picture.images.standard_resolution.url}}" class="centeredBlock img-rounded img-responsive">
+		
+		<i class="fa fa-heart heart"></i> {{picture.likes.count}}
+	</div>
+</div>
+
+
